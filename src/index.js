@@ -1,7 +1,10 @@
 import "./styles.css";
-import test from "./test";
+import form from "./get-form-value";
+import { getApiInfo } from "./test";
+export { controller };
 
-test();
-
-
+form();
+function controller(value){
+        getApiInfo(value);
+}
 

@@ -28,6 +28,7 @@
     position: relative;
     bottom: 140px;
     color: white;
+    -webkit-text-stroke: 1px black;
     
 }
 
