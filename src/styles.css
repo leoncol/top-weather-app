@@ -1,4 +1,4 @@
-.center-all {
+#center-all {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,4 +16,21 @@
 .icon {
     width: 100px;
     height: 100px;
+}
+
+#title-banner {
+    height: 200px;
+    width: 800px;
+}
+
+
+#title {
+    position: relative;
+    bottom: 140px;
+    color: white;
+    
+}
+
+#title-div {
+    position: relative;
 }
