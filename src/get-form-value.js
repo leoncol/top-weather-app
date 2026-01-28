@@ -1,5 +1,6 @@
 import { controller } from "./index";
 export default
+
 function selectForm (){
     const form = document.querySelector('form');
     const input = document.querySelector('input');
