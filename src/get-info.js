@@ -15,7 +15,8 @@ async function getApiInfo(city){
         }
         const cityData = await apiRequest.json();
         console.log('Connection established:', cityData);
-        readJson(cityData);
+        const info = readJson(cityData);
+        return info;
     } catch (error){
         console.log('Error detected:', error)
     }
@@ -24,13 +25,13 @@ async function getApiInfo(city){
 
 function readJson(json){
     let cityName = json.address;
-    let upperCaseCityName = cityName.split("");
-    upperCaseCityName[0] = upperCaseCityName[0].toUpperCase();
-    upperCaseCityName = upperCaseCityName.join("");
-    cityName = upperCaseCityName;
     const farenheitTemp = parseInt(json.currentConditions.temp);
     const celsiusTemp = parseInt((farenheitTemp - 32) / 1.8);
-    console.log(`In ${cityName}, the current temperature is: `+ farenheitTemp + '°' + ' Farenheit' + ' or ' + celsiusTemp + '°' + ' Celsius.');
+    const description = json.description;
+    const conditions = json.currentConditions.conditions;
+    const iconSrc = json.currentConditions.icon;
+
+    return {cityName, farenheitTemp, celsiusTemp, description, conditions, iconSrc};
 }
 
 
