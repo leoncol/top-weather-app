@@ -1,19 +1,11 @@
 import { controller } from "./index";
-export default
+export default function selectForm() {
+  const form = document.querySelector("form");
+  const input = document.querySelector("input");
 
-function selectForm (){
-    const form = document.querySelector('form');
-    const input = document.querySelector('input');
-    
-
-    form.addEventListener("submit", (event) =>{
-        event.preventDefault();
-        const inputValue = input.value
-        controller(inputValue);
-    })
-    
-    
-    
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const inputValue = input.value;
+    controller(inputValue);
+  });
 }
-
-
