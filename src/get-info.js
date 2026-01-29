@@ -7,18 +7,16 @@ async function getApiInfo(city){
         const apiRequest = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=N8TGFSMVTSPYFHJXCFAF7R35Y`);
         if (!apiRequest.ok) {
             if (apiRequest.status === 400) {
-                console.error(`The city doesn't exist. Check the name and try again`);
-                throw new Error(`Response status: ${apiRequest.status}`);
+                throw new Error(`Response status: ${apiRequest.status}, city not found`);
             } else {
                 throw new Error(`HTTP error! status: ${apiRequest.status}`);
             }
         }
         const cityData = await apiRequest.json();
-        console.log('Connection established:', cityData);
         const info = readJson(cityData);
         return info;
     } catch (error){
-        console.log('Error detected:', error)
+        alert(error);
     }
     
 };

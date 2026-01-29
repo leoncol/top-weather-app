@@ -13,7 +13,7 @@ function selectForm (){
     })
     
     
-    console.log(form);
+    
 }
 
 

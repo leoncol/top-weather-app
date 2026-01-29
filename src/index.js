@@ -12,7 +12,7 @@ createIcon();
 createTextIcon();
 form();
 async function controller(value){
-        try {
+        
         createSpinner();
         cleanTextIcon();
         cleanSrc();
@@ -20,25 +20,15 @@ async function controller(value){
         const info = await getApiInfo(value);
         if (info) {
                 let iconInfo = info.iconSrc;
-                console.log(iconInfo);
                 iconInfo = await getIcon(iconInfo);
                 let iconText = info.conditions;
-                deleteSpinner();
                 displayText(iconText);
                 displayIcon(iconInfo);
                 displayInfo(info);
                 
-        } else {
-                throw error;
-        }
+        } 
+        deleteSpinner();
         
-        }
-        catch (error) {
-           alert('City not found!, try again');
-           deleteSpinner();
-
-
-        }
         
 }
 
